@@ -26,10 +26,10 @@ export class WelcomePage {
   }
 
   login() {
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.push(LoginPage, {}, { animate: false} );
   }
   
   signup() {
-    this.navCtrl.push(SignupPage);
+    this.navCtrl.push(SignupPage, {}, { animate: false} );
   }
 }
