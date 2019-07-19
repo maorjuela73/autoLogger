@@ -1,3 +1,4 @@
+import { LoginPage } from './../login/login';
 import { TabsPage } from './../tabs/tabs';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -26,6 +27,10 @@ export class SignupPage {
   signup() {
     // API Connections
      this.navCtrl.push(TabsPage);
+  }
+
+  login() {
+    this.navCtrl.push(LoginPage);
   }
 
 }
