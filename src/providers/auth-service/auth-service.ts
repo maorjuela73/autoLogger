@@ -21,12 +21,16 @@ export class AuthServiceProvider {
   postData(credentials, type) {
     return new Promise((resolve, reject) => {
       let headers = new Headers();
-      this.http.post(apiUrl+type, JSON.stringify(credentials), {headers: headers} ).subscribe(res => {
-        resolve(res.json());
-      }, (err) => {
-        reject(err);
-      });
+      headers.append('Content-Type', 'application/json');
+      // headers.append('Access-Control-Allow-Origin','*');
+      this.http.post(apiUrl + type, JSON.stringify(credentials), {headers: headers})
+        .subscribe(res => {
+          resolve(res.json());
+        }, (err) => {
+          reject(err);
+        });
     });
+
   }
 
 }

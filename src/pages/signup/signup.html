@@ -2,23 +2,33 @@
   <ion-list>
 
     <ion-item>
-      <ion-label fixed>Name</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-label fixed>First name</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="userData.user.first_name" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Last name</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="userData.user.last_name" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>Email</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="userData.user.email" ></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>Username</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-label fixed>Birth date</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="userData.user.birth_date" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="userData.user.password" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password confirmation</ion-label>
+      <ion-input type="password" [(ngModel)]="userData.user.password_confirmation" ></ion-input>
     </ion-item>
 
     <button ion-button full color="success" (click)="signup()">Sign up</button>
