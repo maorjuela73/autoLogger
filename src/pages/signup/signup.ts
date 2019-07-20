@@ -18,7 +18,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SignupPage {
 
-  responseData : any;
+  responseData: any;
   userData = { "user": { "first_name":"", "last_name":"", "email":"", "birth_date":"", "password":"", "password_confirmation":"" } }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthServiceProvider) {
@@ -29,19 +29,23 @@ export class SignupPage {
   }
 
   signup(){
+    console.log('this.userData:', this.userData)
     this.authService.postData(this.userData,'users').then((result) => {
-     this.responseData = result;
-     if(this.responseData.userData){
-     console.log(this.responseData);
-     localStorage.setItem('userData', JSON.stringify(this.responseData));
-     this.navCtrl.push(TabsPage);
-     }
-     else{ console.log("User already exists"); }
-   }, (err) => {
-     // Error log
-   });
-
- }
+      console.log("result: ", result)
+      this.responseData = result;
+      console.log('this.responseData:', this.responseData)
+      if(this.responseData) {
+        console.log(this.responseData);
+        localStorage.setItem('userData', JSON.stringify(this.responseData));
+        this.navCtrl.push(TabsPage);
+      }
+      else { 
+        console.log("User already exists"); 
+      }
+    }, (err) => {
+    // Error log
+    });
+  }
 
   login() {
     this.navCtrl.push(LoginPage);
