@@ -29,13 +29,9 @@ export class SignupPage {
   }
 
   signup(){
-    console.log('this.userData:', this.userData)
     this.authService.postData(this.userData,'users').then((result) => {
-      console.log("result: ", result)
       this.responseData = result;
-      console.log('this.responseData:', this.responseData)
       if(this.responseData) {
-        console.log(this.responseData);
         localStorage.setItem('userData', JSON.stringify(this.responseData));
         this.navCtrl.push(TabsPage);
       }

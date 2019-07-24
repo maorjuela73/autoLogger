@@ -12,10 +12,10 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public app: App) {
     const data = JSON.parse(localStorage.getItem('userData'));
-    console.log('data:', data)
     this.userDetails = data;
+    console.log('this.userDetails:', this.userDetails)
     this.userPostData.id = this.userDetails.id;
-    this.userPostData.first_name = this.userDetails.ifirst_name;
+    this.userPostData.first_name = this.userDetails.first_name;
   }
 
   backToWelcome() {
